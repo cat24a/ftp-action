@@ -5,7 +5,7 @@ commands=""
 i=1
 for local_dir in $INPUT_LOCALDIR; do
 	remote_dir=$(echo $INPUT_REMOTEDIR | cut -d' ' -f$i)
-    commands="$commands mirror $INPUT_OPTIONS --reverse --continue --dereference -x ^\.git/$ $local_dir $remote_dir;"
+    commands="$commands mirror $INPUT_OPTIONS --reverse --continue -x ^\.git/$ $local_dir $remote_dir;"
 	i=$((i + 1))
 done
 
